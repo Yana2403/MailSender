@@ -1,0 +1,83 @@
+﻿<Window x:Class="MailSender.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MailSender"
+        mc:Ignorable="d"
+        Title="MaiLSender" Background="Linen" 
+        Height="500" Width="800">
+    <DockPanel>
+        <Menu 
+            DockPanel.Dock="Top" FontFamily="Georgia">
+            <MenuItem Header="Файл"
+                      Background="MistyRose"
+                      Click="MenuItem_Click" 
+                      FontSize="14">
+                <MenuItem Header="Новое сообщение"
+                          FontSize="11" 
+                          Background="MistyRose"/>
+                <Separator/>
+                <MenuItem Header="Выход" 
+                          FontSize="11"
+                          Background="MistyRose"/>
+            </MenuItem>
+            <MenuItem Header="Сервис"
+                      FontSize="14" 
+                      Background="MistyRose"></MenuItem>
+            <MenuItem Header="Помощь" 
+                      FontSize="14" 
+                      Background="MistyRose"></MenuItem>
+        </Menu>
+        <Canvas>
+            <TextBlock 
+                FontFamily="Tahoma" FontSize="14"
+                Canvas.Left="20" Canvas.Top="10" 
+                Height="17" Width="78">
+                Адресат:
+            </TextBlock>
+            <TextBox x:Name="TextBox_Adresee" 
+                Width="323" Height="39"
+                Canvas.Left="20" Canvas.Top="35" >
+            </TextBox>
+            <TextBlock x:Name="TextBlock_Message" Width="181" Height="25"
+                       Canvas.Left="20" Canvas.Top="115"
+                       FontFamily="Tahoma" FontSize="14">
+                Введите текст сообщения:
+            </TextBlock>
+            <TextBox x:Name="TextBox_Message" 
+                     MinHeight="28" MinWidth="131"
+                     Canvas.Left="20" Canvas.Top="158"
+                     Height="129" Width="323">
+            </TextBox>
+            <TextBlock
+                FontFamily="Tahoma" FontSize="14"
+                Canvas.Left="459" Canvas.Top="10">
+                Укажите отправителя:
+            </TextBlock>
+            <TextBox x:Name="TextBox_Adresser" 
+                Canvas.Left="459" Canvas.Top="35" 
+                Height="39" Width="323" RenderTransformOrigin="0.488,0.518">
+            </TextBox>
+            <TextBlock Width="181" Height="25"
+
+                       FontFamily="Tahoma" FontSize="14"
+                Canvas.Left="459" Canvas.Top="115">
+                Введите пароль:
+            </TextBlock>
+            <PasswordBox x:Name="PasswordEdit" 
+                Width="261" Height="43"
+                Canvas.Left="459" Canvas.Top="158">
+            </PasswordBox>
+            <Button 
+                Canvas.Left="327" Canvas.Top="347"
+                Height="49" Width="166"
+                FontFamily="Tahoma" FontSize="16" 
+                Click="Button_Click"
+                Background="MistyRose">
+                Отправить
+            </Button>
+           
+        </Canvas>
+    </DockPanel>
+</Window>
