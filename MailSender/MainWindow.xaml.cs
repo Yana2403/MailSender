@@ -41,7 +41,7 @@ namespace MailSender
                 {   ///message.Subject= тема 
                     message.Body = messageText; // текст сообщения
                     const string server_address = "smtp.yandex.ru";
-                    const int server_port = 25;
+                    const int server_port = 587;
                     using (SmtpClient client = new SmtpClient(server_address, server_port))
                     {
                         client.EnableSsl = true;
@@ -66,6 +66,17 @@ namespace MailSender
             string Adresser = TextBox_Adresser.Text; //Адресант
             SecureString Password = PasswordEdit.SecurePassword;
             SendMessage(Adressee, messageText, Adresser, Password);
+        }
+
+        
+        private void Contacts_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Улендеева Я.А.\nДля связи: ulendeeva.yana2013@yandex.ru");
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Раздел в разработке.");
         }
     }
 }

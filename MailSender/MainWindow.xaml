@@ -9,11 +9,12 @@
         Height="500" Width="800">
     <DockPanel>
         <Menu 
-            DockPanel.Dock="Top" FontFamily="Georgia">
-            <MenuItem Header="Файл"
+            DockPanel.Dock="Top" FontFamily="Georgia" Foreground="Firebrick" >
+            <MenuItem x:Name="MenuFail" Header="Файл"
                       Background="MistyRose"
                       Click="MenuItem_Click" 
-                      FontSize="14">
+                      FontSize="14"
+                      Foreground="Firebrick">
                 <MenuItem Header="Новое сообщение"
                           FontSize="11" 
                           Background="MistyRose"/>
@@ -25,24 +26,31 @@
             <MenuItem Header="Сервис"
                       FontSize="14" 
                       Background="MistyRose"></MenuItem>
-            <MenuItem Header="Помощь" 
+            <MenuItem x:Name="MenuHelp" Header="Помощь" 
                       FontSize="14" 
-                      Background="MistyRose"></MenuItem>
+                      Background="MistyRose" Click="MenuItem_Click_1"></MenuItem>
+            <MenuItem x:Name="Contacts" Header="Контакты"
+                      FontSize="14"
+                      Background="MistyRose" Click="Contacts_Click"> 
+                
+            </MenuItem>
         </Menu>
         <Canvas>
             <TextBlock 
                 FontFamily="Tahoma" FontSize="14"
                 Canvas.Left="20" Canvas.Top="10" 
-                Height="17" Width="78">
+                Height="17" Width="78"
+                Foreground="Firebrick" FontWeight="Bold">
                 Адресат:
             </TextBlock>
             <TextBox x:Name="TextBox_Adresee" 
                 Width="323" Height="39"
                 Canvas.Left="20" Canvas.Top="35" >
             </TextBox>
-            <TextBlock x:Name="TextBlock_Message" Width="181" Height="25"
+            <TextBlock x:Name="TextBlock_Message" Width="217" Height="25"
                        Canvas.Left="20" Canvas.Top="115"
-                       FontFamily="Tahoma" FontSize="14">
+                       FontFamily="Tahoma" FontSize="14"
+                       Foreground="Firebrick" FontWeight="Bold" >
                 Введите текст сообщения:
             </TextBlock>
             <TextBox x:Name="TextBox_Message" 
@@ -52,7 +60,8 @@
             </TextBox>
             <TextBlock
                 FontFamily="Tahoma" FontSize="14"
-                Canvas.Left="459" Canvas.Top="10">
+                Canvas.Left="459" Canvas.Top="10"
+                Foreground="Firebrick" FontWeight="Bold">
                 Укажите отправителя:
             </TextBlock>
             <TextBox x:Name="TextBox_Adresser" 
@@ -60,9 +69,9 @@
                 Height="39" Width="323" RenderTransformOrigin="0.488,0.518">
             </TextBox>
             <TextBlock Width="181" Height="25"
-
-                       FontFamily="Tahoma" FontSize="14"
-                Canvas.Left="459" Canvas.Top="115">
+                FontFamily="Tahoma" FontSize="14"
+                Canvas.Left="459" Canvas.Top="115"
+                Foreground="Firebrick" FontWeight="Bold">
                 Введите пароль:
             </TextBlock>
             <PasswordBox x:Name="PasswordEdit" 
@@ -74,7 +83,7 @@
                 Height="49" Width="166"
                 FontFamily="Tahoma" FontSize="16" 
                 Click="Button_Click"
-                Background="MistyRose">
+                Background="MistyRose" Foreground="Firebrick">
                 Отправить
             </Button>
            
