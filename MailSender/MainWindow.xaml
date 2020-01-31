@@ -31,8 +31,8 @@
                       Background="MistyRose" Click="MenuItem_Click_1"></MenuItem>
             <MenuItem x:Name="Contacts" Header="Контакты"
                       FontSize="14"
-                      Background="MistyRose" Click="Contacts_Click"> 
-                
+                      Background="MistyRose" Click="Contacts_Click">
+
             </MenuItem>
         </Menu>
         <Canvas>
@@ -48,45 +48,26 @@
                 Canvas.Left="20" Canvas.Top="35" >
             </TextBox>
             <TextBlock x:Name="TextBlock_Message" Width="217" Height="25"
-                       Canvas.Left="20" Canvas.Top="115"
+                       Canvas.Left="214" Canvas.Top="105"
                        FontFamily="Tahoma" FontSize="14"
                        Foreground="Firebrick" FontWeight="Bold" >
                 Введите текст сообщения:
             </TextBlock>
             <TextBox x:Name="TextBox_Message" 
                      MinHeight="28" MinWidth="131"
-                     Canvas.Left="20" Canvas.Top="158"
-                     Height="129" Width="323">
+                     Canvas.Left="168" Canvas.Top="150"
+                     Height="166" Width="496">
             </TextBox>
-            <TextBlock
-                FontFamily="Tahoma" FontSize="14"
-                Canvas.Left="459" Canvas.Top="10"
-                Foreground="Firebrick" FontWeight="Bold">
-                Укажите отправителя:
-            </TextBlock>
-            <TextBox x:Name="TextBox_Adresser" 
-                Canvas.Left="459" Canvas.Top="35" 
-                Height="39" Width="323" RenderTransformOrigin="0.488,0.518">
-            </TextBox>
-            <TextBlock Width="181" Height="25"
-                FontFamily="Tahoma" FontSize="14"
-                Canvas.Left="459" Canvas.Top="115"
-                Foreground="Firebrick" FontWeight="Bold">
-                Введите пароль:
-            </TextBlock>
-            <PasswordBox x:Name="PasswordEdit" 
-                Width="261" Height="43"
-                Canvas.Left="459" Canvas.Top="158">
-            </PasswordBox>
+
             <Button 
                 Canvas.Left="327" Canvas.Top="347"
                 Height="49" Width="166"
                 FontFamily="Tahoma" FontSize="16" 
                 Click="Button_Click"
                 Background="MistyRose" Foreground="Firebrick">
-                Отправить
+                Далее
             </Button>
-           
+
         </Canvas>
     </DockPanel>
 </Window>

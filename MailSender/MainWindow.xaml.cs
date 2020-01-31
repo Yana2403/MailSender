@@ -61,16 +61,20 @@ namespace MailSender
        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string Adressee = TextBox_Adresee.Text; //Адресат
-            string messageText = TextBox_Message.Text; //Текст сообщения
-            string Adresser = TextBox_Adresser.Text; //Адресант
-            SecureString Password = PasswordEdit.SecurePassword;
-            SendMessage(Adressee, messageText, Adresser, Password);
+            SendEndWindow sew = new SendEndWindow();
+            sew.Owner = this;
+            sew.ShowDialog();
+             /* string Adressee = TextBox_Adresee.Text; //Адресат
+              string messageText = TextBox_Message.Text; //Текст сообщения
+              string Adresser = TextBox_Adresser.Text; //Адресант
+              SecureString Password = PasswordEdit.SecurePassword;
+              SendMessage(Adressee, messageText, Adresser, Password);*/
         }
 
         
         private void Contacts_Click(object sender, RoutedEventArgs e)
         {
+            
             MessageBox.Show("Улендеева Я.А.\nДля связи: ulendeeva.yana2013@yandex.ru");
         }
 
