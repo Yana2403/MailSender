@@ -33,12 +33,12 @@ namespace MailSender
             this.Close();
         }
 
-        static void SendMessage(string Adressee, string messageText, string Adresser, SecureString Password)
+        static void SendMessage(string Adressee, string messageHeader, string messageText, string Adresser, SecureString Password)
         {
             try
             {
                 using (var  message = new MailMessage(Adresser, Adressee))
-                {   ///message.Subject= тема 
+                {   message.Subject= messageHeader; 
                     message.Body = messageText; // текст сообщения
                     const string server_address = "smtp.yandex.ru";
                     const int server_port = 587;
@@ -64,11 +64,12 @@ namespace MailSender
             SendEndWindow sew = new SendEndWindow();
             sew.Owner = this;
             sew.ShowDialog();
-             /* string Adressee = TextBox_Adresee.Text; //Адресат
-              string messageText = TextBox_Message.Text; //Текст сообщения
-              string Adresser = TextBox_Adresser.Text; //Адресант
+              /*string Adressee = Adresee_ComboBox.Text; //Адресат
+            string messageHeader = MailHeader.Text; //Тема письма
+            string messageText = MailBody.Text; //Текст сообщения
+            string Adresser = TextBox_Adresser.Text; //Адресант
               SecureString Password = PasswordEdit.SecurePassword;
-              SendMessage(Adressee, messageText, Adresser, Password);*/
+              SendMessage(Adressee,messageHeader, messageText, Adresser, Password);*/
         }
 
         
