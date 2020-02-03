@@ -3,17 +3,18 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MailSender"
+        xmlns:local="clr-namespace:MailSender" 
+        xmlns:data="clr-namespace:MailSender.lib.Data;assembly=MailSender.lib"
+         xmlns:entities="clr-namespace:MailSender.lib.Entities;assembly=MailSender.lib"
         xmlns:fa="http://schemas.fontawesome.io/icons/"
         mc:Ignorable="d"
+       
         Title="MaiLSender" Background="WhiteSmoke" 
         Height="500" Width="800">
     <DockPanel>
         <Menu 
             DockPanel.Dock="Top" FontFamily="Georgia"  >
             <MenuItem x:Name="MenuFail" Header="Файл"
-                     
-                      Click="MenuItem_Click" 
                       FontSize="14" >
                 <MenuItem Header="Новое сообщение"
                           FontSize="11" />
@@ -25,15 +26,14 @@
                       FontSize="14" ></MenuItem>
             <MenuItem x:Name="MenuHelp" Header="Помощь" 
                       FontSize="14" 
-                      Click="MenuItem_Click_1"></MenuItem>
+                      ></MenuItem>
             <MenuItem x:Name="Contacts" Header="Контакты"
-                      FontSize="14"
-                      Click="Contacts_Click">
+                      FontSize="14">
 
             </MenuItem>
         </Menu>
         <StatusBar DockPanel.Dock="Bottom">
-            <TextBlock Text="Красивая цитата"/>
+            <TextBlock Text="Имеешь право все послать" Foreground="DarkSlateBlue"/>
         </StatusBar>
         <TabControl>
             <TabItem Header="Рассылка" ToolTip="Управление рассылкой">
@@ -44,7 +44,38 @@
                     </Grid.RowDefinitions>
                     <ToolBarTray Background="DarkGray">
                         <ToolBar Background="White" Header="Отправители">
-                            <ComboBox x:Name="Adresee_ComboBox" Background="White" Width="150"/>
+                            <ComboBox x:Name="Addresser_ComboBox" Background="White" Width="150"
+                                      ItemsSource="{x:Static data:TestData.Adressers}" SelectedIndex="0"
+                                      DisplayMemberPath="Name"
+                                      IsEditable="True"/>
+                            <Button ToolTip="Добавить"  Margin="0,0,0,0.925" VerticalAlignment="Bottom">
+                                <fa:ImageAwesome Height="12" Icon="Plus" Foreground="RosyBrown"></fa:ImageAwesome>
+                            </Button>
+                            <Button ToolTip="Редактировать" Click="OnSenderEditClick">
+                                <fa:ImageAwesome Height="12" Icon="Edit" Foreground="Green"></fa:ImageAwesome>
+                            </Button>
+                            <Button ToolTip="Удалить">
+                                <fa:ImageAwesome Height="12" Icon="Trash" Foreground="DarkRed"></fa:ImageAwesome>
+                            </Button>
+                        </ToolBar>
+                        <ToolBar Header="Сервера" Background="White" Band="1" BandIndex="0"
+                                 Margin="0,3,3,0">
+                            <ComboBox x:Name="ServersList_ComboBox" Background="White" Width="150" 
+                                      ItemsSource="{x:Static data:TestData.Servers}"
+                                      SelectedIndex="0">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate DataType="entities:Server">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
+                                            <TextBlock Text="{Binding Adress}" Opacity="0.4">
+                                                <TextBlock.ToolTip>
+                                                    <TextBlock Text="{Binding Port, StringFormat=Port:{0}}"/>
+                                                </TextBlock.ToolTip>
+                                            </TextBlock>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
                             <Button ToolTip="Добавить">
                                 <fa:ImageAwesome Height="12" Icon="Plus" Foreground="RosyBrown"></fa:ImageAwesome>
                             </Button>
@@ -55,14 +86,7 @@
                                 <fa:ImageAwesome Height="12" Icon="Trash" Foreground="DarkRed"></fa:ImageAwesome>
                             </Button>
                         </ToolBar>
-                        <ToolBar Header="Сервера" Background="White" Band="1" BandIndex="0"
-                                 Margin="0,3,3,0">
-                            <ComboBox Background="White" Width="150"/>
-                            <Button></Button>
-                            <Button>Редактировать</Button>
-                            <Button>Удалить</Button>
-                        </ToolBar>
-                        <ToolBar  Header="Получатели" Background="White"
+                        <ToolBar Header="Получатели" Background="White"
                                   Band="1">
                             <Button ToolTip="Добавить">
                                 <fa:ImageAwesome Height="12" Icon="Plus" Foreground="RosyBrown"></fa:ImageAwesome>
@@ -84,8 +108,14 @@
                         </ToolBar>
                     </ToolBarTray>
                     <GroupBox Grid.Row="1" Header="Получатели писем">
-                        <DataGrid>
-                        <DataGrid.Columns>
+                        <DataGrid ItemsSource ="{x:Static data:TestData.Adressees}"
+                                   x:Name="AddresseeList" 
+                                  AutoGenerateColumns="False"
+                                  IsReadOnly="True"
+                                  VerticalGridLinesBrush="Gray"
+                                  GridLinesVisibility="Vertical"
+                                  AlternatingRowBackground="DarkGray">
+                            <DataGrid.Columns>
                                 <DataGridTextColumn Header="id"/>
                                 <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="*"/>
                                 <DataGridTextColumn Header="Адрес" Binding="{Binding Address}"/>
@@ -104,13 +134,13 @@
                                 <Button HorizontalAlignment="Stretch" >
                                     <DockPanel>
                                         <fa:ImageAwesome DockPanel.Dock="Right" Margin="5,0" Height="12" Icon="ClockOutline"/>
-                                        <TextBlock> Запланировать </TextBlock>
+                                        <TextBlock> Запланировать</TextBlock>
                                     </DockPanel>
                                 </Button>
-                                <Button HorizontalAlignment="Stretch">
+                                <Button HorizontalAlignment="Stretch" Click="OnSendButtonClick">
                                     <DockPanel>
                                         <fa:ImageAwesome DockPanel.Dock="Right" Margin="5,0" Height="12" Icon="Send"/>
-                                        <TextBlock> Отправить </TextBlock>
+                                        <TextBlock> Отправить</TextBlock>
                                     </DockPanel>
                                 </Button>
                             </StackPanel>
@@ -159,7 +189,7 @@
                                 </GroupBox>
                             </ListBoxItem>
                         </ListBox>
-                        
+
                     </GroupBox>
                 </DockPanel>
             </TabItem>
@@ -172,14 +202,16 @@
                     <GroupBox Header="Список писем">
                         <DockPanel>
                             <UniformGrid DockPanel.Dock="Bottom" Rows="1">
+
                                 <Button Content="Добавить"/>
                                 <Button Content="Удалить"/>
                             </UniformGrid>
-                            <ListBox> 
+                            <ListBox>
                                 <ListBoxItem>Письмо 1</ListBoxItem>
                                 <ListBoxItem>Письмо 2</ListBoxItem>
                                 <ListBoxItem>Письмо 3</ListBoxItem>
                                 <ListBoxItem>Письмо 4</ListBoxItem>
+                                
                             </ListBox>
                         </DockPanel>
                     </GroupBox>
@@ -189,14 +221,16 @@
                                 <TextBox Text="Текст заголовка письма" Name="MailHeader"/>
                             </GroupBox>
                             <GroupBox Header="Текст письма">
-                                <TextBox TextWrapping="Wrap" AcceptsReturn="True" Name="MailBody">Текст тела письма</TextBox>
+                                <TextBox TextWrapping="Wrap" AcceptsReturn="True" Name="MailBody" >Введите текст...
+                                </TextBox>
                             </GroupBox>
+                          
                         </DockPanel>
                     </GroupBox>
                 </Grid>
             </TabItem>
         </TabControl>
-       
-       
+
+
     </DockPanel>
 </Window>

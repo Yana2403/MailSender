@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSender", "MailSender\MailSender.csproj", "{2E0A4DE2-CE37-49B2-A515-1DDAD06590A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSender.lib", "MailSender.lib\MailSender.lib.csproj", "{44D3E61D-2962-4E30-8D57-3843A4489F30}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2E0A4DE2-CE37-49B2-A515-1DDAD06590A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E0A4DE2-CE37-49B2-A515-1DDAD06590A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E0A4DE2-CE37-49B2-A515-1DDAD06590A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44D3E61D-2962-4E30-8D57-3843A4489F30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44D3E61D-2962-4E30-8D57-3843A4489F30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44D3E61D-2962-4E30-8D57-3843A4489F30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44D3E61D-2962-4E30-8D57-3843A4489F30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
