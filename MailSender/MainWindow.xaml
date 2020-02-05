@@ -8,8 +8,8 @@
          xmlns:entities="clr-namespace:MailSender.lib.Entities;assembly=MailSender.lib"
         xmlns:fa="http://schemas.fontawesome.io/icons/"
         mc:Ignorable="d"
-       
-        Title="MaiLSender" Background="WhiteSmoke" 
+       DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}"
+        Title="{Binding Title}" Background="WhiteSmoke" 
         Height="500" Width="800">
     <DockPanel>
         <Menu 
