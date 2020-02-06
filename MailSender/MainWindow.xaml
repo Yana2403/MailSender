@@ -109,7 +109,15 @@
                         </ToolBar>
                     </ToolBarTray>
                     <GroupBox Grid.Row="1" Header="Получатели писем">
-                        <view:AdresseesView/>
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+                            <view:AdresseesView Grid.Column="0"/>
+                            <view:AdresseeEditor Grid.Column="1"/>
+
+                        </Grid>
                     </GroupBox>
                 </Grid>
             </TabItem>

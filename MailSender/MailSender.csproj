@@ -81,6 +81,9 @@
     </Compile>
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="Views\AdresseeEditor.xaml.cs">
+      <DependentUpon>AdresseeEditor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AdresseesView.xaml.cs">
       <DependentUpon>AdresseesView.xaml</DependentUpon>
     </Compile>
@@ -101,6 +104,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AdresserEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AdresseeEditor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
