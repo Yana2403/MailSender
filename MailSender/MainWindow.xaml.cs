@@ -34,15 +34,15 @@ namespace MailSender
 
         private void OnSendButtonClick(object sender, RoutedEventArgs e)
         {
-            var addressee = AddresseeList.SelectedItem as Adressee;
-            var adresser = Addresser_ComboBox.SelectedItem as Adresser;
-            var server = ServersList_ComboBox.SelectedItem as Server;
-
-            if (addressee is null || server is null || sender is null) return;
-
-            var mail_sender = new lib.Services.DebugMailSender(server.Adress, server.Port, server.UseSSL, server.Login, server.Password.Decode(3));
-
-            mail_sender.Send(MailHeader.Text, MailBody.Text, adresser.Address, addressee.Address);
+           //var addressee = AddresseeList.SelectedItem as Adressee;
+           //var adresser = Addresser_ComboBox.SelectedItem as Adresser;
+           //var server = ServersList_ComboBox.SelectedItem as Server;
+           //
+           //if (addressee is null || server is null || sender is null) return;
+           //
+           //var mail_sender = new lib.Services.DebugMailSender(server.Adress, server.Port, server.UseSSL, server.Login, server.Password.Decode(3));
+           //
+           //mail_sender.Send(MailHeader.Text, MailBody.Text, adresser.Address, addressee.Address);
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)

@@ -7,6 +7,7 @@
         xmlns:data="clr-namespace:MailSender.lib.Data;assembly=MailSender.lib"
          xmlns:entities="clr-namespace:MailSender.lib.Entities;assembly=MailSender.lib"
         xmlns:fa="http://schemas.fontawesome.io/icons/"
+        xmlns:view="clr-namespace:MailSender.Views"
         mc:Ignorable="d"
        DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}"
         Title="{Binding Title}" Background="WhiteSmoke" 
@@ -108,19 +109,7 @@
                         </ToolBar>
                     </ToolBarTray>
                     <GroupBox Grid.Row="1" Header="Получатели писем">
-                        <DataGrid ItemsSource ="{Binding Adressees}"
-                                   x:Name="AddresseeList" 
-                                  AutoGenerateColumns="False"
-                                  IsReadOnly="True"
-                                  VerticalGridLinesBrush="Gray"
-                                  GridLinesVisibility="Vertical"
-                                  AlternatingRowBackground="DarkGray">
-                            <DataGrid.Columns>
-                                <DataGridTextColumn Header="id"/>
-                                <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="*"/>
-                                <DataGridTextColumn Header="Адрес" Binding="{Binding Address}"/>
-                            </DataGrid.Columns>
-                        </DataGrid>
+                        <view:AdresseesView/>
                     </GroupBox>
                 </Grid>
             </TabItem>
