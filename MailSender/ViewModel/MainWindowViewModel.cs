@@ -22,7 +22,12 @@ namespace MailSender.ViewModel
             private set => Set(ref _Adressees, value);
 
         }
-
+        private Adressee _SelectedAdressee;
+        public Adressee SelectedAdressee
+        {
+            get => _SelectedAdressee;
+            set => Set(ref _SelectedAdressee, value);
+        }
         public MainWindowViewModel(AdresseeManager AdresseeManager)
         {
             _AdresseeManager = AdresseeManager;

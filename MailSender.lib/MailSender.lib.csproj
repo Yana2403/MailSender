@@ -45,6 +45,7 @@
     <Compile Include="Entities\Adressee.cs" />
     <Compile Include="Entities\Adresser.cs" />
     <Compile Include="Entities\Server.cs" />
+    <Compile Include="MVVM\LambdaCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AdresseeManager.cs" />
     <Compile Include="Services\Interfaces\AdresseeStoreinMemory.cs" />

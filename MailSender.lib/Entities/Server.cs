@@ -9,6 +9,7 @@ namespace MailSender.lib.Entities
     public class Server
     {
         /// <summary>Почтовый сервер</summary>
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Adress { get; set; }
         public int Port { get; set; }
