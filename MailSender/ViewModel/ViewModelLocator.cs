@@ -12,8 +12,8 @@ namespace MailSender.ViewModel
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
             var services = SimpleIoc.Default;
-            services.Register<AdresseeManager>();
-            services.Register<AdresseeStoreinMemory>();
+            services.Register<IAdresseeManager, AdresseeManager>();
+            services.Register<IAdresseeStore,AdresseeStoreinMemory>();
             services.Register<MainWindowViewModel>();//регистрация класса
         }
 

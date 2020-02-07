@@ -49,6 +49,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AdresseeManager.cs" />
     <Compile Include="Services\Interfaces\AdresseeStoreinMemory.cs" />
+    <Compile Include="Services\Interfaces\IAdresseeManager.cs" />
+    <Compile Include="Services\Interfaces\IAdresseeStore.cs" />
     <Compile Include="Services\MailSender.cs" />
     <Compile Include="Service\TextEncoder.cs" />
   </ItemGroup>
