@@ -2,6 +2,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using MailSender.lib.Entities;
 using MailSender.lib.Services;
+using MailSender.lib.Services.Interfaces;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
@@ -9,7 +10,7 @@ namespace MailSender.ViewModel
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        private readonly AdresseeManager _AdresseeManager;
+        private readonly IAdresseeManager _AdresseeManager;
         private string _Title = "Рассыльщик почты";
 
         public string Title
@@ -34,7 +35,7 @@ namespace MailSender.ViewModel
         public ICommand LoadAdresseesDataCommand { get; }
         public ICommand SaveAdresseesChangesCommand { get; }
         #endregion
-        public MainWindowViewModel(AdresseeManager AdresseeManager)
+        public MainWindowViewModel(IAdresseeManager AdresseeManager)
         {
             LoadAdresseesDataCommand = new RelayCommand(OnLoadAdresseesDataCommandExecuted, CanLoadAdresseesDataCommandExecute) ;
             SaveAdresseesChangesCommand = new RelayCommand<Adressee>(OnSaveAdresseeChangesCommandExecute, CanSaveAdresseeChangesCommandExecute);

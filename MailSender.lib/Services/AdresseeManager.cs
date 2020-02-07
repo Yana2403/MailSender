@@ -6,10 +6,10 @@ using MailSender.lib.Services.Interfaces;
 
 namespace MailSender.lib.Services
 {
-   public  class AdresseeManager
+   public  class AdresseeManager:IAdresseeManager
     {
-        private AdresseeStoreinMemory _Store;
-        public AdresseeManager(AdresseeStoreinMemory Store)
+        private IAdresseeStore _Store;
+        public AdresseeManager(IAdresseeStore Store)
         {
             _Store = Store;
         }
