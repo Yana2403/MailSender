@@ -1,7 +1,9 @@
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.CommandWpf;
 using MailSender.lib.Entities;
 using MailSender.lib.Services;
 using System.Collections.ObjectModel;
+using System.Windows.Input;
 
 namespace MailSender.ViewModel
 {
@@ -28,10 +30,31 @@ namespace MailSender.ViewModel
             get => _SelectedAdressee;
             set => Set(ref _SelectedAdressee, value);
         }
+        #region Команды
+        public ICommand LoadAdresseesDataCommand { get; }
+        public ICommand SaveAdresseesChangesCommand { get; }
+        #endregion
         public MainWindowViewModel(AdresseeManager AdresseeManager)
         {
+            LoadAdresseesDataCommand = new RelayCommand(OnLoadAdresseesDataCommandExecuted, CanLoadAdresseesDataCommandExecute) ;
+            SaveAdresseesChangesCommand = new RelayCommand<Adressee>(OnSaveAdresseeChangesCommandExecute, CanSaveAdresseeChangesCommandExecute);
             _AdresseeManager = AdresseeManager;
             _Adressees = new ObservableCollection<Adressee>(_AdresseeManager.GetAll());
+        }
+        private bool CanLoadAdresseesDataCommandExecute() => true;
+        private void OnLoadAdresseesDataCommandExecuted()
+        {
+            Adressees = new ObservableCollection<Adressee>(_AdresseeManager.GetAll());
+        }
+        private bool CanSaveAdresseeChangesCommandExecute(Adressee adressee)
+        {
+            System.Diagnostics.Debug.WriteLine("Проверка состояния команды" + adressee?.Name);
+            return adressee != null;
+        }
+        private void OnSaveAdresseeChangesCommandExecute(Adressee adressee)
+        {
+            _AdresseeManager.Edit(adressee);
+            _AdresseeManager.SaveChanges();
         }
     }
 }

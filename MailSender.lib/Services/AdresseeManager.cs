@@ -1,10 +1,8 @@
-﻿using MailSender.lib.Entities;
-using MailSender.lib.Services.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using MailSender.lib.Entities;
+using MailSender.lib.Services.Interfaces;
 
 namespace MailSender.lib.Services
 {
@@ -25,7 +23,14 @@ namespace MailSender.lib.Services
         {
 
         }
-        //Edit adressee
+        public void Edit(Adressee adressee)
+        {
+            _Store.Edit(adressee.Id, adressee);
+        }
         //Delete adressee
+        public void SaveChanges()
+        {
+            _Store.SaveChanges();
+        }
     }
 }
