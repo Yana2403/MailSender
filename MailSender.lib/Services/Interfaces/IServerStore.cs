@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MailSender.lib.Services.Interfaces
 {
-    public interface IAdresseeManager : IDataStore<Adressee>
+    public interface IServerStore : IDataStore<Server>
     {
     }
 }
