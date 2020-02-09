@@ -55,8 +55,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AdresseeManager.cs" />
     <Compile Include="Services\InMemory\AdresseeStoreinMemory.cs" />
+    <Compile Include="Services\InMemory\DataStoreInMemory.cs" />
     <Compile Include="Services\Interfaces\IAdresseeManager.cs" />
-    <Compile Include="Services\Interfaces\IAdresseeStore.cs" />
+    <Compile Include="Services\Interfaces\IAdresseesStore.cs" />
+    <Compile Include="Services\Interfaces\IAdressersStore.cs" />
     <Compile Include="Services\Interfaces\IDataStore.cs" />
     <Compile Include="Services\Interfaces\IMailingListsStore.cs" />
     <Compile Include="Services\Interfaces\IMailsStore.cs" />

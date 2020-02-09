@@ -8,8 +8,8 @@ namespace MailSender.lib.Services
 {
    public  class AdresseeManager : IAdresseeManager
     {
-        private IAdresseeStore _Store;
-        public AdresseeManager(IAdresseeStore Store)
+        private IAdresseesStore _Store;
+        public AdresseeManager(IAdresseesStore Store)
         {
             _Store = Store;
         }

@@ -5,9 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace MailSender.lib.Services.Interfaces
 {
-    public interface IAdresseeManager : IDataStore<Adressee>
+    public interface IAdresseeManager
     {
+        IEnumerable<Adressee> GetAll();
+
+        void Add(Adressee NewAdressee);
+
+        void Edit(Adressee Recipient);
+
+        void SaveChanges();
     }
 }

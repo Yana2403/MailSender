@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MailSender.lib.Services.Interfaces
 {
-    public interface IAdresseeStore
+    public interface IAdresseesStore
     {
         IEnumerable<Adressee> GetAll();
         Adressee GetById(int id);
