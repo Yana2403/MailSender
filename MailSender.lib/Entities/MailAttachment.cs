@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace MailSender.lib.Entities
 {
-    public class Adressee : RersonEntity
-    {  
-        
+    public class MailAttachment : BaseEntity
+    {
+        //вложения
     }
 }

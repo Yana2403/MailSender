@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MailSender.lib.Entities.Base;
 
 namespace MailSender.lib.Services.Interfaces
 {
@@ -39,7 +40,7 @@ namespace MailSender.lib.Services.Interfaces
             return adressee.Id;
         }
 
-        public Adressee Remove(int id)
+        public Adressee Remove(int id) 
         {
             var db_adressee = GetById(id);
             if (db_adressee != null)

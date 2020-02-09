@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MailSender.lib.Entities.Base;
 
 namespace MailSender.lib.Data
 {
@@ -12,9 +13,9 @@ namespace MailSender.lib.Data
     {
         public static List<Server> Servers { get; } = new List<Server>
         {
-            new Server {Id=0, Name = "Яндекс", Adress = " smtp.yandex.ru", Port = 587, Login = "UserLogin", Password = "Password".Encode(3)},
-            new Server {Id=1, Name = "Mail.ru", Adress = " smtp.mail.ru", Port = 587, Login = "UserLogin", Password = "Password".Encode(3) },
-            new Server {Id=2, Name = "GMail", Adress = " smtp.gmail.com", Port = 587, Login = "UserLogin", Password = "Password".Encode(3) },
+            new Server {Id=0, Name = "Яндекс", Address = " smtp.yandex.ru", Port = 587, Login = "UserLogin", Password = "Password".Encode(3)},
+            new Server {Id=1, Name = "Mail.ru", Address = " smtp.mail.ru", Port = 587, Login = "UserLogin", Password = "Password".Encode(3) },
+            new Server {Id=2, Name = "GMail", Address = " smtp.gmail.com", Port = 587, Login = "UserLogin", Password = "Password".Encode(3) },
         };
 
         public static List<Adresser> Adressers { get; } = new List<Adresser>
