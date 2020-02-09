@@ -9,8 +9,12 @@ namespace MailSender.lib.Services.Interfaces
 {
     public interface IAdresseeStore
     {
-        IEnumerable<Adressee> Get();
+        IEnumerable<Adressee> GetAll();
+        Adressee GetById(int id);
+        int Create(Adressee adressee);
+
         void Edit(int id, Adressee adressee);
+        Adressee Remove(int id);
         void SaveChanges();
     }
 }
