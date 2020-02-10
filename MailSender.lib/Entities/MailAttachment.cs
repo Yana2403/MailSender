@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace MailSender.lib.Entities
 {
-   public class Adresser : RersonEntity
+    public class MailAttachment : BaseEntity
     {
-        public override string ToString() => $"{Name}:{Address}";
+        //вложения
     }
 }

@@ -7,10 +7,7 @@ using System.Threading.Tasks;
 
 namespace MailSender.lib.Services.Interfaces
 {
-    public interface IAdresseeStore
+    public interface  IMailsStore : IDataStore<Mail>
     {
-        IEnumerable<Adressee> Get();
-        void Edit(int id, Adressee adressee);
-        void SaveChanges();
     }
 }

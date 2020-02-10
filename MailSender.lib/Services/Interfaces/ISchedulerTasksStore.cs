@@ -5,17 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace MailSender.lib.Services.Interfaces
 {
-    public interface IAdresseeManager
+    public interface ISchedulerTasksStore : IDataStore<SchedulerTask>
     {
-        IEnumerable<Adressee> GetAll();
-
-        void Add(Adressee NewAdressee);
-
-        void Edit(Adressee Recipient);
-
-        void SaveChanges();
     }
 }

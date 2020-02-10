@@ -6,10 +6,10 @@ using MailSender.lib.Services.Interfaces;
 
 namespace MailSender.lib.Services
 {
-   public  class AdresseeManager:IAdresseeManager
+   public  class AdresseeManager : IAdresseeManager
     {
-        private IAdresseeStore _Store;
-        public AdresseeManager(IAdresseeStore Store)
+        private IAdresseesStore _Store;
+        public AdresseeManager(IAdresseesStore Store)
         {
             _Store = Store;
         }
@@ -17,7 +17,7 @@ namespace MailSender.lib.Services
 
         public IEnumerable<Adressee> GetAll()
         {
-            return _Store.Get();
+            return _Store.GetAll();
         }
         public void Add (Adressee NewAdressee)
         {
