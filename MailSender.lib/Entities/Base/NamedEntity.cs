@@ -10,10 +10,5 @@ namespace MailSender.lib.Entities.Base
     {
         public virtual string Name { get; set; }
     }
-    public abstract class RersonEntity : NamedEntity
-    {
-        public string Address { get; set; }
-
-    }
 }
 

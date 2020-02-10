@@ -46,6 +46,7 @@
     <Compile Include="Entities\Adresser.cs" />
     <Compile Include="Entities\Base\Entity.cs" />
     <Compile Include="Entities\Base\NamedEntity.cs" />
+    <Compile Include="Entities\Base\RersonEntity.cs" />
     <Compile Include="Entities\Mail.cs" />
     <Compile Include="Entities\MailAttachment.cs" />
     <Compile Include="Entities\MailingList.cs" />
