@@ -19,8 +19,6 @@ namespace MailSender.lib.Entities
             {
                 if (value == "Улендеева321")
                     throw new ArgumentException("Улендеева321 нам не подходит", nameof(value));
-                //Debug.Assert(value != "Улендеева---");
-                //Trace.WriteLine("Сообщение в журнал!");
                 base.Name = value;
             }
         }
