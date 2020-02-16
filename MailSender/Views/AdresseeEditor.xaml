@@ -7,7 +7,7 @@
              xmlns:validation="clr-namespace:MailSender.Infastractures.ValidationRules"
              mc:Ignorable="d" 
              DataContext="{Binding MainWindowModel, Source={StaticResource Locator}}" d:DesignWidth="260" Height="83.739">
-    <Grid Background="White" Margin="10,0,10,-11" Height="95" VerticalAlignment="Top">
+    <Grid Background="White" Margin="10,0,10,-11" Height="95" VerticalAlignment="Top" Validation.Error="OnDataValidationError">
         <Grid.Resources>
             <Style TargetType="TextBox">
                 <Setter Property="Margin" Value="3,2,1,2"/>
@@ -51,7 +51,7 @@
         <TextBlock Grid.Column="0" Grid.Row="2" Text="Address:"/>
         <TextBox Grid.Column="1" Grid.Row="0" IsReadOnly="False" Text="{Binding SelectedAdressee.Id, NotifyOnValidationError=True}"
                  Validation.Error="OnDataValidationError"/>
-        <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding SelectedAdressee.Name, NotifyOnValidationError=True,ValidatesOnNotifyDataErrors=True, ValidatesOnDataErrors=True}"/>
+        <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding SelectedAdressee.Name, NotifyOnValidationError=True,ValidatesOnNotifyDataErrors=True,ValidatesOnExceptions=True, ValidatesOnDataErrors=True}"/>
         <TextBox Grid.Column="1" Grid.Row="2">
             <TextBox.Text>
                 <Binding Path="SelectedAdressee.Address" NotifyOnValidationError="True">
