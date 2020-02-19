@@ -1,4 +1,4 @@
-using CommonServiceLocator;
+п»їusing CommonServiceLocator;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using MailSender.Infastractures.Services;
@@ -15,7 +15,7 @@ namespace MailSender.ViewModel
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
             var services = SimpleIoc.Default;
-            services.Register<MainWindowViewModel>();//регистрация класса
+            services.Register<MainWindowViewModel>();//СЂРµРіРёСЃС‚СЂР°С†РёСЏ РєР»Р°СЃСЃР°
             services.Register<IAdresseeManager, AdresseeManager>();
             services.Register<IAdresseesStore,AdresseeStoreinMemory>();
             services.Register<IAdressersStore, AdressersStoreinMemory>();
