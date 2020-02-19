@@ -1,4 +1,4 @@
-using GalaSoft.MvvmLight;
+п»їusing GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using MailSender.Infastractures.Services.Interfaces;
 using MailSender.lib.Entities;
@@ -18,36 +18,36 @@ namespace MailSender.ViewModel
         private readonly IAdresserEditor _AdresserEditor;
 
 
-        private string _Title = "Рассыльщик почты";
+        private string _Title = "Р Р°СЃСЃС‹Р»СЊС‰РёРє РїРѕС‡С‚С‹";
 
         public string Title
         {
             get => _Title;
             set => Set(ref _Title, value);
         }
-        private ObservableCollection<Adressee> _Adressees; //определяем коллекцию
-        public ObservableCollection<Adressee> Adressees //для возможности обновления
+        private ObservableCollection<Adressee> _Adressees; //РѕРїСЂРµРґРµР»СЏРµРј РєРѕР»Р»РµРєС†РёСЋ
+        public ObservableCollection<Adressee> Adressees //РґР»СЏ РІРѕР·РјРѕР¶РЅРѕСЃС‚Рё РѕР±РЅРѕРІР»РµРЅРёСЏ
         {
             get => _Adressees;
             private set => Set(ref _Adressees, value);
 
         }
-        private ObservableCollection<Adresser> _Adressers; //определяем коллекцию
-        public ObservableCollection<Adresser> Adressers //для возможности обновления
+        private ObservableCollection<Adresser> _Adressers; //РѕРїСЂРµРґРµР»СЏРµРј РєРѕР»Р»РµРєС†РёСЋ
+        public ObservableCollection<Adresser> Adressers //РґР»СЏ РІРѕР·РјРѕР¶РЅРѕСЃС‚Рё РѕР±РЅРѕРІР»РµРЅРёСЏ
         {
             get => _Adressers;
             private set => Set(ref _Adressers, value);
 
         }
-        private ObservableCollection<Server> _Servers; //определяем коллекцию
-        public ObservableCollection<Server> Servers //для возможности обновления
+        private ObservableCollection<Server> _Servers; //РѕРїСЂРµРґРµР»СЏРµРј РєРѕР»Р»РµРєС†РёСЋ
+        public ObservableCollection<Server> Servers //РґР»СЏ РІРѕР·РјРѕР¶РЅРѕСЃС‚Рё РѕР±РЅРѕРІР»РµРЅРёСЏ
         {
             get => _Servers;
             private set => Set(ref _Servers, value);
 
         }
-        private ObservableCollection<Mail> _Mails; //определяем коллекцию
-        public ObservableCollection<Mail> Mails //для возможности обновления
+        private ObservableCollection<Mail> _Mails; //РѕРїСЂРµРґРµР»СЏРµРј РєРѕР»Р»РµРєС†РёСЋ
+        public ObservableCollection<Mail> Mails //РґР»СЏ РІРѕР·РјРѕР¶РЅРѕСЃС‚Рё РѕР±РЅРѕРІР»РµРЅРёСЏ
         {
             get => _Mails;
             private set => Set(ref _Mails, value);
@@ -79,7 +79,7 @@ namespace MailSender.ViewModel
             get => _SelectedServer;
             set => Set(ref _SelectedServer, value);
         }
-        #region Команды
+        #region РљРѕРјР°РЅРґС‹
         public ICommand LoadAdresseesDataCommand { get; }
         public ICommand SaveAdresseesChangesCommand { get; }
 
@@ -119,7 +119,7 @@ namespace MailSender.ViewModel
         }
         private bool CanSaveAdresseeChangesCommandExecute(Adressee adressee)
         {
-            System.Diagnostics.Debug.WriteLine("Проверка состояния команды" + adressee?.Name);
+            System.Diagnostics.Debug.WriteLine("РџСЂРѕРІРµСЂРєР° СЃРѕСЃС‚РѕСЏРЅРёСЏ РєРѕРјР°РЅРґС‹" + adressee?.Name);
             return adressee != null;
         }
         private void OnSaveAdresseeChangesCommandExecute(Adressee adressee)
