@@ -69,6 +69,7 @@
     <Compile Include="Services\Interfaces\IMailsStore.cs" />
     <Compile Include="Services\Interfaces\ISchedulerTasksStore.cs" />
     <Compile Include="Services\Interfaces\IServerStore.cs" />
+    <Compile Include="Services\MailSchedulerTPL.cs" />
     <Compile Include="Services\MailSender.cs" />
     <Compile Include="Service\TextEncoder.cs" />
   </ItemGroup>
