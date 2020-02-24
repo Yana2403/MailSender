@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace MailSender.lib.Data.EF
 {
-    public class MailSenderDB: DbContext
+    public  class MailSenderDB: DbContext
     {
         public DbSet<Mail> Mails { get; set; }
 
-        public DbSet<Adresser> Senders { get; set; }
+        public DbSet<Adresser> Adressers { get; set; }
 
-        public DbSet<Adressee> Recipients { get; set; }
+        public DbSet<Adressee> Adressees{ get; set; }
 
         public DbSet<Server> Servers { get; set; }
 

@@ -157,6 +157,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AdresseeManager.cs" />
     <Compile Include="Services\DebugMailSender.cs" />
+    <Compile Include="Services\EF\AdresseeStoreEF.cs" />
     <Compile Include="Services\InMemory\AdresseeStoreinMemory.cs" />
     <Compile Include="Services\InMemory\AdressersStoreinMemory.cs" />
     <Compile Include="Services\InMemory\DataStoreInMemory.cs" />
