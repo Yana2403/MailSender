@@ -141,6 +141,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\EF\MailSenderDB.cs" />
     <Compile Include="Data\TestData.cs" />
     <Compile Include="Entities\Adressee.cs" />
     <Compile Include="Entities\Adresser.cs" />
