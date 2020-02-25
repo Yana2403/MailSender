@@ -12,7 +12,7 @@ namespace MailSender.lib.Data.EF
     {
         public DbSet<Mail> Mails { get; set; }
 
-        public DbSet<Adresser> Adressers { get; set; }
+        public DbSet<Adresser> Adressers  { get; set; }
 
         public DbSet<Adressee> Adressees{ get; set; }
 
