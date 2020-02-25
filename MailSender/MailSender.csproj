@@ -224,6 +224,7 @@
     <Compile Include="Infastractures\Services\Interfaces\IAdresserEditor.cs" />
     <Compile Include="Infastractures\Services\WindowAdresserEditor.cs" />
     <Compile Include="Infastractures\ValidationRules\RegExValidation.cs" />
+    <Compile Include="Reports\TestReport.cs" />
     <Compile Include="SendEndWindow.xaml.cs">
       <DependentUpon>SendEndWindow.xaml</DependentUpon>
     </Compile>
