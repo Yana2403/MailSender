@@ -35,7 +35,11 @@ namespace MailSender.ViewModel
             services.Register(() => new DbContextOptionsBuilder<MailSenderDB>()
                .UseSqlServer(App.Configuration.GetConnectionString("DefaultConnection")).Options);
             services.Register<MailSenderDBInitializer>();
-
+#if DEBUG
+            services.Register<IMailSenderService, MailSenderService>();
+#else
+            services.Register<IMailSenderService, DebugMailSenderService>();
+#endif
             var db_initializer = (MailSenderDBInitializer)services.GetService(typeof(MailSenderDBInitializer));
             var initialize_task = Task.Run(() => db_initializer.InitializeAsync());  // Уходим от удара граблей в следующей строке ниже!!!
             initialize_task.Wait();

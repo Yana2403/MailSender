@@ -177,6 +177,9 @@
     <Compile Include="Services\Interfaces\IAdressersStore.cs" />
     <Compile Include="Services\Interfaces\IDataStore.cs" />
     <Compile Include="Services\Interfaces\IMailingListsStore.cs" />
+    <Compile Include="Services\Interfaces\IMailScheduler.cs" />
+    <Compile Include="Services\Interfaces\IMailSender.cs" />
+    <Compile Include="Services\Interfaces\IMailSenderService.cs" />
     <Compile Include="Services\Interfaces\IMailsStore.cs" />
     <Compile Include="Services\Interfaces\ISchedulerTasksStore.cs" />
     <Compile Include="Services\Interfaces\IServerStore.cs" />
