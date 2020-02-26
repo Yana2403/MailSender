@@ -86,7 +86,8 @@ namespace MailSender.ViewModel
         public ICommand AdresserEditCommand { get; }
 
         #endregion
-        public MainWindowViewModel(IAdresseeManager AdresseeManager, 
+        public MainWindowViewModel(
+            IAdresseeManager AdresseeManager, 
             IAdressersStore AdressersStore,
             IMailsStore MailsStore, 
             IServerStore ServerStore,
@@ -95,9 +96,11 @@ namespace MailSender.ViewModel
             LoadAdresseesDataCommand = new RelayCommand(OnLoadAdresseesDataCommandExecuted, CanLoadAdresseesDataCommandExecute) ;
             SaveAdresseesChangesCommand = new RelayCommand<Adressee>(OnSaveAdresseeChangesCommandExecute, CanSaveAdresseeChangesCommandExecute);
             AdresserEditCommand = new RelayCommand<Adresser>(OnAdresserEditCommandExecuted, CanAdresserEditCommandExecute);
-            _AdresseeManager = AdresseeManager;
+            
            // _Adressees = new ObservableCollection<Adressee>(_AdresseeManager.GetAll());
 
+    
+            _AdresseeManager = AdresseeManager;
             _AdressersStore = AdressersStore;
             _ServerStore = ServerStore;
             _MailsStore = MailsStore;

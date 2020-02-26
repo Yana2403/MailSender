@@ -9,6 +9,7 @@ using MailSender.lib.Services.EF;
 using MailSender.lib.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using System.Threading.Tasks;
 
 namespace MailSender.ViewModel
 {
@@ -19,19 +20,27 @@ namespace MailSender.ViewModel
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
             var services = SimpleIoc.Default;
+            services.Register<IConfiguration>(()=>(App.Configuration));
+
             services.Register<MainWindowViewModel>();//регистрация класса
             services.Register<IAdresseeManager, AdresseeManager>();
             // services.Register<IAdresseesStore,AdresseeStoreinMemory>();
             services.Register<IAdresseesStore, AdresseeStoreEF>();
             services.Register<IAdressersStore, AdressersStoreinMemory>();
             services.Register<IServerStore, ServersStoreinMemory>();
-            services.Register<IMailsStore, MailsStoreinMemory>();
+            services.Register<IMailsStore, MailsStoreinMemory>(); 
+            services.Register<IAdresserEditor, WindowAdresserEditor>();
             services.Register<MailSenderDB>();
 
             services.Register(() => new DbContextOptionsBuilder<MailSenderDB>()
                .UseSqlServer(App.Configuration.GetConnectionString("DefaultConnection")).Options);
+            services.Register<MailSenderDBInitializer>();
 
-            services.Register<IAdresserEditor, WindowAdresserEditor>();
+            var db_initializer = (MailSenderDBInitializer)services.GetService(typeof(MailSenderDBInitializer));
+            var initialize_task = Task.Run(() => db_initializer.InitializeAsync());  // Уходим от удара граблей в следующей строке ниже!!!
+            initialize_task.Wait();
+
+           
             
         }
 
