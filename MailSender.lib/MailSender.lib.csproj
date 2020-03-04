@@ -141,7 +141,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\EF\AdresseeManagerStoreEF.cs" />
     <Compile Include="Data\EF\AdresseesStoreEF.cs" />
     <Compile Include="Data\EF\AdressersStoreEF.cs" />
     <Compile Include="Data\EF\MailingListStoreEF.cs" />
